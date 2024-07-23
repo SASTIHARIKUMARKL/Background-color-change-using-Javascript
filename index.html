@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p id="colorName"></p>
+    <button onclick="changeColor()">Click Here</button> 
+    <script>
+    function changeColor() {
+        const randomColor = getRandomColor();
+    
+        document.body.style.backgroundColor = randomColor;
+    
+        document.getElementById("colorName").innerText = 'Background Color: ';
+    }
+    
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    </script>
+    
+</body>
+</html>
